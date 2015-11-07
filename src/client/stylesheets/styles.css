@@ -1,0 +1,55 @@
+html {
+  background-color: lightgrey;
+}
+
+#resume {
+  margin: 5% 10%;
+  border: 1px solid grey;
+  background-color: white !important;
+  min-height: 400px;
+  padding: 10px;
+}
+
+.row {
+  width: 100%;
+  line-height: 20px;
+  height: 20px;
+}
+
+.row-cell-left {
+  display: inline-block;
+  width: 45%;
+  float: left;
+}
+
+.row-cell-right {
+  display: inline-block;
+  width: 45%;
+  float: right;
+  clear: right;
+}
+
+.resume-header-info {
+  width: 66%;
+  display: inline-block;
+  float: left;
+}
+
+.resume-profile-picture {
+  display: inline-block;
+  width: 33%;
+  float: right;
+}
+
+.resume-header {
+  font-size: 1.2em;
+}
+
+.resume-section-header {
+  width: 100%;
+  font-size: 1.2em;
+}
+
+.row-header {
+  font-weight: bold;
+}
