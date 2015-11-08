@@ -12,7 +12,7 @@
     "start": "npm run watch-js & npm run dev-server & npm run server",
     "build": "npm run clean && ./node_modules/.bin/babel src -d lib --experimental",
     "heroku": "NODE_ENV=production node server/server.js",
-    "postinstall": "webpack -p --config ./webpack.config.js"
+    "postinstall": "webpack -p --config ./webpack.config.dev.js"
   },
   "author": "Simo-Pekka Koskinen",
   "license": "MIT",
