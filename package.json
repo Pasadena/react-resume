@@ -9,8 +9,9 @@
     "watch-js": "./node_modules/.bin/babel src -d lib --experimental -w",
     "dev-server": "node lib/server/webpack",
     "server": "nodemon lib/server/server",
-    "start": "npm run watch-js & npm run dev-server & npm run server",
-    "build": "npm run clean && ./node_modules/.bin/babel src -d lib --experimental"
+    "build": "npm run clean && ./node_modules/.bin/babel src -d lib --experimental",
+    "start": "NODE_ENV=production node src/server/server.js",
+    "postinstall": "webpack -p --config ./webpack.config.dev.js"
   },
   "author": "Simo-Pekka Koskinen",
   "license": "MIT",
