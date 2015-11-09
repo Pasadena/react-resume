@@ -12,7 +12,6 @@
     "start-dev": "npm run watch-js & npm run dev-server & npm run server",
     "build": "npm run clean && ./node_modules/.bin/babel src -d lib --experimental",
     "start": "NODE_ENV=production nodemon ./lib/server/server",
-    "postinstall": "webpack --config webpack.config.js --progress --profile --colors",
     "deploy2": "npm run clean & npm run build & webpack -p --config webpack.config.js & node ./lib/server/server"
   },
   "author": "Simo-Pekka Koskinen",
