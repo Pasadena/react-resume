@@ -65,11 +65,11 @@ let ResumeBody = React.createClass({
           <HeadingRow leftContent="2009/09-present" rightContent="Cerion Solutions Oy"/>
           <DetailRow rowContent="As a technical consultant I have designed, implemented and maintained several web-based budgeting and strategy planning applications and customer portals." rowCellClass="row-cell-right"/>
           <HeadingRow leftContent="2008/05-2008/8" rightContent="Nokia Oyj"/>
-          <DetailRow rowContent="Assempbly line worker" rowCellClass="row-cell-right"/>
+          <DetailRow rowContent="Assembly line worker" rowCellClass="row-cell-right"/>
           <HeadingRow leftContent="2007/07-2007/8" rightContent="Nokia Oyj"/>
-          <DetailRow rowContent="Assempbly line worker" rowCellClass="row-cell-right"/>
+          <DetailRow rowContent="Assembly line worker" rowCellClass="row-cell-right"/>
           <HeadingRow leftContent="2005/05-2006/8" rightContent="Nokia Oyj"/>
-          <DetailRow rowContent="Assempbly line worker" rowCellClass="row-cell-right"/>
+          <DetailRow rowContent="Assembly line worker" rowCellClass="row-cell-right"/>
         </ResumeSection>
         <ResumeSection header="Technical skills">
           <HeadingRow leftContent="Languages" rightContent=""/>
