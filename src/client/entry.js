@@ -1,5 +1,5 @@
 import React from "react";
-import App from "../shared/components/App";
+import App from "./../shared/components/App";
 
 require("./stylesheets/styles.css");
 
