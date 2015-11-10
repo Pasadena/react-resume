@@ -7,13 +7,44 @@ pre {
   white-space: initial;
 }
 
+sup {
+  font-size: 75%;
+  font-weight: normal;
+  font-style: italic;
+}
+
+.italic {
+  font-style: italic;
+}
+
 #resume {
   margin: 5% 15%;
   border: 1px solid grey;
   background-color: white !important;
   min-height: 400px;
-  padding: 10px;
-  border-radius: 2px;
+  padding: 2%;
+  border-radius: 5px;
+}
+
+#linkedin {
+  background-image: url("./../images/linkedin.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.header {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.resume-heading-column, resume-heading-column > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.resume-heading-column > div  {
+  font-size: 0.9em;
 }
 
 .credits {
@@ -24,24 +55,62 @@ pre {
 }
 
 .row {
+  display: flex;
+  flex-direction: row;
   width: 100%;
   line-height: 20px;
-  height: 20px;
   clear: both;
   margin-bottom: 0.5%;
 }
 
-.row-cell-left {
-  display: inline-block;
-  width: 45%;
+.row-header {
+  font-weight: bold;
+}
+
+.resume-header-info > div {
+  font-style: italic;
+}
+
+.resume-header-info > .row > .row-cell-left .row-cell-right {
+  width: 50%;
+}
+
+.row-header > .row-cell {
+  font-size: 1em;
+}
+
+.left-cell {
+  width: 35%;
   float: left;
 }
 
-.row-cell-right {
-  display: inline-block;
-  width: 45%;
+.left-cell-header {
+  width: 35%;
+  float: left;
+}
+
+.middle-cell-header {
+  width: 35%;
+  float: left;
+}
+
+.right-cell-header {
+  width: 30%;
   float: right;
   clear: right;
+}
+
+.right-cell {
+  width: 60%;
+  float: right;
+  clear: right;
+}
+
+.row-cell {
+  display: flex;
+  flex-direction: row;
+  padding-left: 0.5%;
+  font-size: 0.8em;
 }
 
 .resume-header-info {
@@ -57,7 +126,11 @@ pre {
 }
 
 .resume-header {
-  font-size: 1.3em;
+  font-size: 1.3em !important;
+}
+
+.resume-owner {
+  font-size: 1.2em !important;
 }
 
 .resume-section {
@@ -72,8 +145,4 @@ pre {
   font-size: 1.2em;
   margin-bottom: 1%;
   border-bottom: 2px solid #7FFFD4;
-}
-
-.row-header {
-  font-weight: bold;
 }

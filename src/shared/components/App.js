@@ -4,12 +4,26 @@ let App = class App extends React.Component {
   render() {
     return (
       <div className="container">
+        <Header />
         <Resume />
         <Footer/>
       </div>
     );
   }
 }
+
+let Header = React.createClass({
+  render() {
+    return (
+      <div className="header">
+        <h1>
+          My React Resume <br/>
+          <sup>{"with Isomorphic React"} </sup>
+        </h1>
+      </div>
+    );
+  }
+});
 
 let Resume = React.createClass({
   render() {
@@ -25,28 +39,23 @@ let Resume = React.createClass({
 let ResumeHeader = React.createClass({
   render() {
     return (
-      <div>
-        <div className="resume-header-info">
-          <div className="row resume-header">
-            <div className="row-cell-left">Curriculum Vitae</div>
-            <div className="row-cell-right">7.11.2015</div>
-          </div>
-          <div className="row">
-            <div className="row-cell-left">Simo-Pekka Koskinen</div>
-          </div>
-          <div className="row">
-            <div className="row-cell-right">Savikatu 3 A16 20540 Turku | 0407204728 |</div>
-            <div className="row-cell-right">simo.pekka.koskinen@gmail.com</div>
-            <div className="row-cell-right">Syntymäpaikka -ja aika: 09.01.1986 Halikko</div>
-            <div className="row-cell-right">github.com/Pasadena</div>
-            <div className="row-cell-right">fi.linkedin.com/in/simopekkakoskinen</div>
-          </div>
-
-        </div>
-        <div className="resume-profile-picture">
+      <ResumeHeading>
+        <ResumeHeadingColumn headingClass="left-cell-header">
+          <div className="resume-header">Curriculum Vitae</div>
+          <div className="resume-owner">Simo-Pekka Koskinen</div>
+        </ResumeHeadingColumn>
+        <ResumeHeadingColumn headingClass="middle-cell-header">
+          <div className="resume-header">7.11.2015</div>
+          <div style={{height: '20px'}}></div>
+          <div>Savikatu 3 A16 20540 Turku | 0407204728 |</div>
+          <div className="italic"><a href="mailto:simo.pekka.koskinen@gmail.com">simo.pekka.koskinen@gmail.com</a></div>
+          <div className="italic"><a href="http://github.com/Pasadena" target="_blank">github.com/Pasadena</a></div>
+          <div className="italic"><a href="http://fi.linkedin.com/in/simopekkakoskinen" target="_blank"><span id="linkedin"></span>fi.linkedin.com/in/simopekkakoskinen</a></div>
+        </ResumeHeadingColumn>
+        <ResumeHeadingColumn headingClass="right-cell-header">
           <img id="profilePic" height="300" width="300"/>
-        </div>
-      </div>
+        </ResumeHeadingColumn>
+      </ResumeHeading>
     );
   }
 });
@@ -57,41 +66,41 @@ let ResumeBody = React.createClass({
       <div>
         <ResumeSection header="Education">
           <HeadingRow leftContent="2006-2015" rightContent="Master of Science in Engineering, University of Turku"/>
-          <DetailRow rowContent="Major: Software engineering, Minor: business knowledge" rowCellClass="row-cell-right"/>
-          <DetailRow rowContent="Thesis: Adopting automatic acceptance testing" rowCellClass="row-cell-right"/>
+          <DetailRow rowContent="Major: Software engineering, Minor: business knowledge" rowCellClass="row-cell right-cell"/>
+          <DetailRow rowContent="Thesis: Adopting automatic acceptance testing" rowCellClass="row-cell right-cell"/>
           <HeadingRow leftContent="2002-2005" rightContent="Graduate, Halikon lukio"/>
         </ResumeSection>
         <ResumeSection header="Work History">
           <HeadingRow leftContent="2009/09-present" rightContent="Cerion Solutions Oy"/>
-          <DetailRow rowContent="As a technical consultant I have designed, implemented and maintained several web-based budgeting and strategy planning applications and customer portals." rowCellClass="row-cell-right"/>
+          <DetailRow rowContent="As a technical consultant I have designed, implemented and maintained several web-based budgeting and strategy planning applications and customer portals." rowCellClass="row-cell right-cell"/>
           <HeadingRow leftContent="2008/05-2008/8" rightContent="Nokia Oyj"/>
-          <DetailRow rowContent="Assembly line worker" rowCellClass="row-cell-right"/>
+          <DetailRow rowContent="Assembly line worker" rowCellClass="row-cell right-cell"/>
           <HeadingRow leftContent="2007/07-2007/8" rightContent="Nokia Oyj"/>
-          <DetailRow rowContent="Assembly line worker" rowCellClass="row-cell-right"/>
+          <DetailRow rowContent="Assembly line worker" rowCellClass="row-cell right-cell"/>
           <HeadingRow leftContent="2005/05-2006/8" rightContent="Nokia Oyj"/>
-          <DetailRow rowContent="Assembly line worker" rowCellClass="row-cell-right"/>
+          <DetailRow rowContent="Assembly line worker" rowCellClass="row-cell right-cell"/>
         </ResumeSection>
         <ResumeSection header="Technical skills">
           <HeadingRow leftContent="Languages" rightContent=""/>
-          <DetailRow rowContent="Java, Scala, Javascript, Coffeescript" rowCellClass="row-cell-right"/>
+          <DetailRow rowContent="Java, Scala, Javascript, Coffeescript" rowCellClass="row-cell right-cell"/>
           <HeadingRow leftContent="Platforms" rightContent=""/>
-          <DetailRow rowContent="Java EE, Node.js, Force.com" rowCellClass="row-cell-right"/>
+          <DetailRow rowContent="Java EE, Node.js, Force.com" rowCellClass="row-cell right-cell"/>
           <HeadingRow leftContent="Front-end libraries" rightContent=""/>
-          <DetailRow rowContent="React.js, Angular.js, Backbone.js" rowCellClass="row-cell-right"/>
+          <DetailRow rowContent="React.js, Angular.js, Backbone.js" rowCellClass="row-cell right-cell"/>
           <HeadingRow leftContent="Back-end frameworks" rightContent=""/>
-          <DetailRow rowContent="Play Framework, Tapestry 5, JSF 2" rowCellClass="row-cell-right"/>
+          <DetailRow rowContent="Play Framework, Tapestry 5, JSF 2" rowCellClass="row-cell right-cell"/>
           <HeadingRow leftContent="Test tools" rightContent=""/>
-          <DetailRow rowContent="Cucumber, JUnit" rowCellClass="row-cell-right"/>
+          <DetailRow rowContent="Cucumber, JUnit" rowCellClass="row-cell right-cell"/>
         </ResumeSection>
         <ResumeSection header="Languages">
-          <DetailRow rowContent="Finnish - native proficiency" rowCellClass="row-cell-left"/>
-          <DetailRow rowContent="English - professional working proficiency" rowCellClass="row-cell-left"/>
-          <DetailRow rowContent="Swedish - limited proficiency" rowCellClass="row-cell-left"/>
-          <DetailRow rowContent="German - elementary proficiency" rowCellClass="row-cell-left"/>
+          <DetailRow rowContent="Finnish - native proficiency" rowCellClass="row-cell left-cell"/>
+          <DetailRow rowContent="English - professional working proficiency" rowCellClass="row-cell left-cell"/>
+          <DetailRow rowContent="Swedish - limited proficiency" rowCellClass="row-cell left-cell"/>
+          <DetailRow rowContent="German - elementary proficiency" rowCellClass="row-cell left-cell"/>
         </ResumeSection>
         <ResumeSection header="Certifications">
-          <DetailRow rowContent="Functional Programming Principles in Scala - Coursera" rowCellClass="row-cell-left"/>
-          <DetailRow rowContent="Principles of Reactive Programming - Coursera" rowCellClass="row-cell-left"/>
+          <DetailRow rowContent="Functional Programming Principles in Scala - Coursera" rowCellClass="row-cell left-cell"/>
+          <DetailRow rowContent="Principles of Reactive Programming - Coursera" rowCellClass="row-cell left-cell"/>
         </ResumeSection>
         <ResumeSection header="Volunteer experience">
           <HeadingRow leftContent="2010" rightContent="Vice-Chairman, Digit ry"/>
@@ -114,6 +123,27 @@ let Footer = React.createClass({
     }
 });
 
+let ResumeHeading = React.createClass({
+  render() {
+    return (
+      <div className="resume-heading-section">
+        {this.props.children}
+      </div>
+    );
+  }
+});
+
+let ResumeHeadingColumn = React.createClass({
+  render() {
+    let classes = this.props.headingClass + " resume-heading-column";
+    return (
+      <div className={classes}>
+        {this.props.children}
+      </div>
+    );
+  }
+});
+
 let ResumeSection = React.createClass({
   render() {
     return (
@@ -131,10 +161,10 @@ let HeadingRow = React.createClass({
   render() {
     return (
       <div className="row row-header">
-        <div className="row-cell-left">
+        <div className="row-cell left-cell">
           {this.props.leftContent}
         </div>
-        <div className="row-cell-right">
+        <div className="row-cell right-cell">
           {this.props.rightContent}
         </div>
       </div>
@@ -146,6 +176,7 @@ let DetailRow = React.createClass({
   render() {
     return (
       <div className="row">
+      <div className="row-cell left-cell"></div>
         <div className={this.props.rowCellClass}>
           {this.props.rowContent}
         </div>

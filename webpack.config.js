@@ -37,7 +37,8 @@ module.exports = {
       loaders: [
         { test: /\.jsx?$/, loaders: ['babel-loader?experimental'], exclude: /node_modules/ },
         { test: /\.css$/, loader: "style-loader!css-loader" },
-        { test: /\.js?$/, loaders: ['babel-loader?experimental'], exclude: /node_modules/, include: path.join(__dirname, 'assets') }
+        { test: /\.js?$/, loaders: ['babel-loader?experimental'], exclude: /node_modules/, include: path.join(__dirname, 'assets') },
+        { test: /\.png$/, loader: "url-loader?mimetype=image/png" }
       ]
     }
   /**}
