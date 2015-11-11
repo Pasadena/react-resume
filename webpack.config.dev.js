@@ -1,3 +1,4 @@
+var path = require("path");
 var webpack = require('webpack');
 
 module.exports = {
@@ -17,12 +18,14 @@ module.exports = {
     new webpack.NoErrorsPlugin(),
   ],
   resolve: {
+    root: path.join(__dirname, "node_modules"),
     extensions: ['', '.js']
   },
   module: {
+    /**resolveLoader: { root: path.join(__dirname, "node_modules") },**/
     loaders: [
       { test: /\.jsx?$/, loaders: ['react-hot', 'babel-loader?experimental'], exclude: /node_modules/ },
-      { test: /\.css$/, loader: "style-loader!css-loader" },
+      { test: /\.css$/, loader: "style-loader!css-loader"},
       { test: /\.png$/, loader: "url-loader?mimetype=image/png" }
     ]
   }
