@@ -68,7 +68,7 @@ let ResumeHeader = React.createClass({
           </div>
         </ResumeHeadingColumn>
         <ResumeHeadingColumn headingClass="right-cell-header">
-          <img id="profilePic" height="200" width="200"/>
+          <img id="profilePic" className="profile-picture"/>
         </ResumeHeadingColumn>
       </ResumeHeading>
     );
