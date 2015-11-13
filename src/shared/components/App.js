@@ -19,7 +19,7 @@ let Header = React.createClass({
       <div className="header">
         <h1>
           My React Resume <br/>
-          <sup>{"with Isomorphic React"} </sup>
+          <sup>{"- with Isomorphic React"} </sup>
         </h1>
       </div>
     );
@@ -48,16 +48,27 @@ let ResumeHeader = React.createClass({
         <ResumeHeadingColumn headingClass="middle-cell-header">
           <div className="resume-header">7.11.2015</div>
           <div style={{height: '20px'}}></div>
-          <div>Savikatu 3 A16 20540 Turku | 0407204728 |</div>
-          <div className="italic url-row"><a href="mailto:simo.pekka.koskinen@gmail.com">simo.pekka.koskinen@gmail.com</a></div>
-          <div className="italic url-row"><a href="http://github.com/Pasadena" target="_blank">github.com/Pasadena</a></div>
+          <div>Savikatu 3 A16 20540 Turku</div>
+          <div>tel. 0407204728</div>
           <div className="italic url-row">
-            <img id="linkedin" height="20" width="20" style={{float: 'left'}}/>
-            <a href="http://fi.linkedin.com/in/simopekkakoskinen" target="_blank" style={{lineHeight: '20px', paddingLeft: '5px'}}>fi.linkedin.com/in/simopekkakoskinen</a>
+            <span className="glyphicon glyphicon-envelope some-icon" aria-hidden="true"></span>
+            <a href="mailto:simo.pekka.koskinen@gmail.com">simo.pekka.koskinen@gmail.com</a>
+            </div>
+          <div className="italic url-row">
+            <img id="linkedin" height="20" width="20" className="some-icon" alt="fi.linkedin.com/in/simopekkakoskinen"/>
+            <a href="http://fi.linkedin.com/in/simopekkakoskinen" target="_blank">fi.linkedin.com/in/simopekkakoskinen</a>
+          </div>
+          <div className="italic url-row">
+            <img id="github" height="20" width="20" className="some-icon" alt="http://github.com/Pasadena"/>
+            <a href="http://github.com/Pasadena" target="_blank">github.com/Pasadena</a>
+          </div>
+          <div className="italic url-row">
+            <img id="twitter" height="20" width="20" className="some-icon" alt="http://twitter.com/spkoskinen"/>
+            <a href="http://twitter.com/spkoskinen" target="_blank">twitter.com/spkoskinen</a>
           </div>
         </ResumeHeadingColumn>
         <ResumeHeadingColumn headingClass="right-cell-header">
-          <img id="profilePic" height="300" width="300"/>
+          <img id="profilePic" height="200" width="200"/>
         </ResumeHeadingColumn>
       </ResumeHeading>
     );
@@ -101,8 +112,8 @@ let ResumeBody = React.createClass({
           <DetailRow leftCellContent="German - elementary proficiency" rowCellClass="row-cell left-cell"/>
         </ResumeSection>
         <ResumeSection header="Certifications">
-          <DetailRow leftCellContent="Functional Programming Principles in Scala - Coursera" rowCellClass="row-cell left-cell"/>
-          <DetailRow leftCellContent="Principles of Reactive Programming - Coursera" rowCellClass="row-cell left-cell"/>
+          <DetailRowSingleCell rowContent="Functional Programming Principles in Scala - Coursera"/>
+          <DetailRowSingleCell rowContent="Principles of Reactive Programming - Coursera" />
         </ResumeSection>
         <ResumeSection header="Volunteer experience">
           <HeadingRow leftContent="2010" rightContent="Vice-Chairman, Digit ry"/>
@@ -164,10 +175,10 @@ let HeadingRow = React.createClass({
     return (
       <div className="row row-header">
         <div className="row-cell left-cell">
-          {this.props.leftContent}
+          <p>{this.props.leftContent}</p>
         </div>
         <div className="row-cell right-cell">
-          {this.props.rightContent}
+          <p>{this.props.rightContent}</p>
         </div>
       </div>
     );
@@ -196,6 +207,20 @@ let DetailRow = React.createClass({
         <div className="row-cell left-cell">{this.props.leftCellContent}</div>
         <div className={this.props.rowCellClass}>
           {this.props.rowContent}
+        </div>
+      </div>
+    );
+  }
+});
+
+let DetailRowSingleCell = React.createClass({
+  render() {
+    return (
+      <div className="row detail-row">
+        <div className="row-cell">
+          <p>
+            {this.props.rowContent}
+          </p>
         </div>
       </div>
     );

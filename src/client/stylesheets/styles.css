@@ -1,4 +1,4 @@
-/**@import "~bootstrap/dist/bootstrap.css";**/
+@import "~bootstrap/dist/css/bootstrap.css";
 
 html {
   background-color: lightgrey;
@@ -13,6 +13,7 @@ sup {
   font-size: 75%;
   font-weight: normal;
   font-style: italic;
+  top: 0.5em !important;
 }
 
 .italic {
@@ -21,11 +22,20 @@ sup {
 
 .url-row {
   padding-top: 5px;
+  padding-left: 1%;
   min-height: 20px;
+  border-left: 1px solid grey;
+
+}
+
+.some-icon {
+  float: left;
+  margin-right: 2%;
+  font-size: 1.2em;
 }
 
 #resume {
-  margin: 5% 20%;
+  margin: 5% 15%;
   border: 1px solid grey;
   background-color: white !important;
   min-height: 400px;
@@ -48,6 +58,7 @@ sup {
 
 .resume-header {
   font-size: 1.3em !important;
+  padding-bottom: 8%;
 }
 
 .resume-owner {
@@ -71,10 +82,10 @@ sup {
 .row {
   display: flex;
   flex-direction: row;
-  width: 100%;
   line-height: 20px;
   clear: both;
   margin-bottom: 0.5%;
+  padding-left: 2%;
 }
 
 .row-header {
