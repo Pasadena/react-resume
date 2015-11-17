@@ -1,0 +1,189 @@
+@import "~bootstrap/less/bootstrap";
+
+@background-color: lightgrey;
+@resume-border: 1px solid grey;
+
+@resume-header-font: 1.3em;
+@resume-sub-header-font: 1.2em;
+@resume-detail-font: 0.9em;
+
+@total-width: 100%;
+@body-left: @total-width - 65%;
+@body-right: 70%;
+@body-middle: @body-left;
+
+
+html {
+  background-color: @background-color;
+  font-family: 'Roboto', sans-serif;
+}
+
+pre {
+  white-space: initial;
+}
+
+sup {
+  font-size: 75%;
+  font-weight: normal;
+  font-style: italic;
+  top: 0.5em !important;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.right-content {
+  float: right;
+  clear: right;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.header {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.credits {
+  font-size: 12px;
+  text-align: center;
+  padding: 10px 0;
+  margin: 0 auto;
+}
+
+.resume {
+  margin: 5% 10%;
+  border: @resume-border;
+  background-color: white !important;
+  min-height: 400px;
+  padding: 2%;
+  border-radius: 5px;
+
+  &-header {
+    font-size: @resume-header-font !important;
+    padding-bottom: 8%;
+  }
+
+  &-owner {
+    font-size: @resume-sub-header-font !important;
+  }
+
+  &-section {
+    width: @total-width;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    clear: both;
+    &-header {
+      width: 100%;
+      font-size: @resume-sub-header-font;;
+      margin-bottom: 1%;
+      border-bottom: 2px solid #7FFFD4;
+    }
+  }
+}
+
+.resume-header-info > div {
+  .italic
+}
+
+.resume-header-info > .row > .row-cell-left .row-cell-right {
+  width: 50%;
+}
+
+.resume-heading-column, resume-heading-column > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.resume-heading-column > div  {
+  font-size: @resume-detail-font;
+}
+
+.resume-header-info {
+  width: 66%;
+  display: inline-block;
+  float: left;
+}
+
+.resume-profile-picture {
+  display: inline-block;
+  width: 33%;
+  float: right;
+  padding: 1%;
+  height: 20%;
+}
+
+.profile-picture {
+  width: 100%;
+  height: auto;
+}
+
+.row {
+  line-height: 20px;
+  clear: both;
+  margin-bottom: 0.5%;
+  padding-left: 2%;
+  .flex-row
+}
+
+.row-header {
+  font-weight: bold;
+  & > .row.cell {
+    font-size: 1em;
+  }
+}
+
+.row-cell {
+  display: flex;
+  flex-direction: row;
+}
+
+.left-cell {
+  width: 35%;
+  float: left;
+  &-header {
+    width: 35%;
+    float: left;
+  }
+}
+
+.right-cell {
+  width: 60%;
+  .right-content;
+  &-header {
+    width: 30%;
+    .right-content;
+  }
+}
+
+.middle-cell-header {
+  width: 35%;
+  float: left;
+}
+
+.url-row {
+  padding-top: 5px;
+  padding-left: 1%;
+  min-height: 20px;
+  border-left: 1px solid grey;
+
+}
+
+.some-icon {
+  float: left;
+  margin-right: 2%;
+  font-size: 1.2em;
+}
+
+.small-font {
+  font-size: @resume-detail-font;
+}
+
+.detail-row > div {
+  padding-left: 0.5%
+}

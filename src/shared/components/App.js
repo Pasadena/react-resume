@@ -50,22 +50,10 @@ let ResumeHeader = React.createClass({
           <div style={{height: '20px'}}></div>
           <div>Savikatu 3 A16 20540 Turku</div>
           <div>tel. 0407204728</div>
-          <div className="italic url-row">
-            <span className="glyphicon glyphicon-envelope some-icon" aria-hidden="true"></span>
-            <a href="mailto:simo.pekka.koskinen@gmail.com">simo.pekka.koskinen@gmail.com</a>
-            </div>
-          <div className="italic url-row">
-            <img id="linkedin" height="20" width="20" className="some-icon" alt="fi.linkedin.com/in/simopekkakoskinen"/>
-            <a href="http://fi.linkedin.com/in/simopekkakoskinen" target="_blank">fi.linkedin.com/in/simopekkakoskinen</a>
-          </div>
-          <div className="italic url-row">
-            <img id="github" height="20" width="20" className="some-icon" alt="http://github.com/Pasadena"/>
-            <a href="http://github.com/Pasadena" target="_blank">github.com/Pasadena</a>
-          </div>
-          <div className="italic url-row">
-            <img id="twitter" height="20" width="20" className="some-icon" alt="http://twitter.com/spkoskinen"/>
-            <a href="http://twitter.com/spkoskinen" target="_blank">twitter.com/spkoskinen</a>
-          </div>
+          <EmailCell />
+          <IconCell imageId="linkedin" linkName="http://fi.linkedin.com/in/simopekkakoskinen" />
+          <IconCell imageId="github" linkName="http://github.com/Pasadena" />
+          <IconCell imageId="twitter" linkName="http://twitter.com/spkoskinen" />
         </ResumeHeadingColumn>
         <ResumeHeadingColumn headingClass="right-cell-header">
           <img id="profilePic" className="profile-picture"/>
@@ -80,49 +68,51 @@ let ResumeBody = React.createClass({
     return (
       <div>
         <ResumeSection header="Education">
-          <HeadingRow leftContent="2006-2015" rightContent="Master of Science in Engineering, University of Turku"/>
-          <DetailRow rowContent="Major: Software engineering, Minor: business knowledge" rowCellClass="row-cell right-cell small-font"/>
-          <DetailRow rowContent="Thesis: Adopting automatic acceptance testing" rowCellClass="row-cell right-cell small-font"/>
-          <HeadingRow leftContent="2002-2005" rightContent="Graduate, Halikon lukio"/>
+          <ResumeSectionRow leftContent="2006-2015" rightContent="Master of Science in Engineering, University of Turku" heading />
+          <ResumeSectionRow rightContent="Major: Software engineering, Minor: business knowledge" rightCellClasses="small-font"/>
+          <ResumeSectionRow rightContent="Thesis: Adopting automatic acceptance testing" rightCellClasses="small-font" />
+          <ResumeSectionRow leftContent="2002-2005" rightContent="Graduate, Halikon lukio" heading/>
         </ResumeSection>
         <ResumeSection header="Work History">
-          <HeadingRow leftContent="2009/09-present" rightContent="Cerion Solutions Oy"/>
-          <DetailRow rowContent="As a technical consultant I have designed, implemented and maintained several web-based budgeting and strategy planning applications and customer portals." rowCellClass="row-cell right-cell small-font"/>
-          <HeadingRow leftContent="2008/05-2008/8" rightContent="Nokia Oyj"/>
-          <DetailRow rowContent="Assembly line worker" rowCellClass="row-cell right-cell small-font"/>
-          <HeadingRow leftContent="2007/07-2007/8" rightContent="Nokia Oyj"/>
-          <DetailRow rowContent="Assembly line worker" rowCellClass="row-cell right-cell small-font"/>
-          <HeadingRow leftContent="2005/05-2006/8" rightContent="Nokia Oyj"/>
-          <DetailRow rowContent="Assembly line worker" rowCellClass="row-cell right-cell small-font"/>
+          <ResumeSectionRow leftContent="2009/09-present" rightContent="Cerion Solutions Oy" heading />
+          <ResumeSectionRow rightContent="As a technical consultant I have designed, implemented and maintained several web-based budgeting and strategy planning applications and customer portals." rightCellClasses="small-font"/>
+          <ResumeSectionRow leftContent="2008/05-2008/8" rightContent="Nokia Oyj" heading />
+          <ResumeSectionRow rightContent="Assembly line worker" rightCellClasses="small-font"/>
+          <ResumeSectionRow leftContent="2007/05-2007/8" rightContent="Nokia Oyj" heading />
+          <ResumeSectionRow rightContent="Assembly line worker" rightCellClasses="small-font" />
+          <ResumeSectionRow leftContent="2005/05-2006/8" rightContent="Nokia Oyj" heading />
+          <ResumeSectionRow rightContent="Assembly line worker" rightCellClasses="small-font" />
         </ResumeSection>
         <ResumeSection header="Technical skills">
-          <LeftHeadingRightDetailRow leftContent="Languages" rightContent="Java, Scala, Javascript, Coffeescript"/>
-          <LeftHeadingRightDetailRow leftContent="Platforms" rightContent="Java EE, Node.js, Force.com"/>
-          <LeftHeadingRightDetailRow leftContent="Front-end technologies" rightContent="HTML 5, CSS, LESS, React.js, Angular.js, Backbone.js"/>
-          <LeftHeadingRightDetailRow leftContent="Back-end frameworks" rightContent="Play Framework, Tapestry 5, JSF 2"/>
-          <LeftHeadingRightDetailRow leftContent="Test tools" rightContent="Cucumber, JUnit"/>
-          <LeftHeadingRightDetailRow leftContent="Databases and DALs" rightContent="MSSQL Server, Oracle, PostgreSQL, Hibernate, Slick"/>
-          <LeftHeadingRightDetailRow leftContent="Operating systems" rightContent="Windows, Linux (Ubuntu, CentOS)"/>
-          <LeftHeadingRightDetailRow leftContent="Version Controls" rightContent="Git, Svn"/>
+          <ResumeSectionRow leftContent="Programming languages" rightContent="Java, Scala, Javascript, Coffeescript" leftCellClasses="row-header" />
+          <ResumeSectionRow leftContent="Platforms" rightContent="Java EE, Node.js, Force.com" leftCellClasses="row-header" />
+          <ResumeSectionRow leftContent="Front-end technologies" rightContent="HTML 5, CSS, LESS, React.js, Angular.js, Backbone.js" leftCellClasses="row-header" />
+          <ResumeSectionRow leftContent="Back-end frameworks" rightContent="Play Framework, Tapestry 5, JSF 2" leftCellClasses="row-header" />
+          <ResumeSectionRow leftContent="Test tools" rightContent="Cucumber, JUnit" leftCellClasses="row-header" />
+          <ResumeSectionRow leftContent="Project build tools" rightContent="Maven, Ant, Ivy, Grunt, Webpack" leftCellClasses="row-header" />
+          <ResumeSectionRow leftContent="Databases and DALs" rightContent="MSSQL Server, Oracle, PostgreSQL, Hibernate, Slick" leftCellClasses="row-header" />
+          <ResumeSectionRow leftContent="Operating systems" rightContent="Windows, Linux (Ubuntu, CentOS)" leftCellClasses="row-header" />
+          <ResumeSectionRow leftContent="Version Controls" rightContent="Git, Svn" leftCellClasses="row-header" />
         </ResumeSection>
         <ResumeSection header="Languages">
-          <DetailRow leftCellContent="Finnish - native proficiency" rowCellClass="row-cell left-cell"/>
-          <DetailRow leftCellContent="English - professional working proficiency" rowCellClass="row-cell left-cell"/>
-          <DetailRow leftCellContent="Swedish - limited proficiency" rowCellClass="row-cell left-cell"/>
-          <DetailRow leftCellContent="German - elementary proficiency" rowCellClass="row-cell left-cell"/>
+          <ResumeSectionRow leftContent="Finnish" rightContent="Native proficiency" leftCellClasses="row-header"/>
+          <ResumeSectionRow leftContent="English" rightContent="Professional working proficiency" leftCellClasses="row-header"/>
+          <ResumeSectionRow leftContent="Swedish" rightContent="Limited proficiency" leftCellClasses="row-header"/>
+          <ResumeSectionRow leftContent="German" rightContent="Elementary proficiency" leftCellClasses="row-header"/>
         </ResumeSection>
         <ResumeSection header="Certifications">
-          <DetailRowSingleCell rowContent="Functional Programming Principles in Scala - Coursera"/>
-          <DetailRowSingleCell rowContent="Principles of Reactive Programming - Coursera" />
+          <SingleContentRow content="Functional Programming Principles in Scala - Coursera" />
+          <SingleContentRow content="Principles of Reactive Programming - Coursera" />
         </ResumeSection>
         <ResumeSection header="Volunteer experience">
-          <HeadingRow leftContent="2010" rightContent="Vice-Chairman, Digit ry"/>
-          <HeadingRow leftContent="2007-2009" rightContent="Director of Recreational Activities, Digit ry"/>
-          <HeadingRow leftContent="2009-2014" rightContent="Organizer, Turku Agile Day"/>
+          <ResumeSectionRow leftContent="2009-2014" rightContent="Organizer, Turku Agile Day"/>
+          <ResumeSectionRow leftContent="2010" rightContent="Vice-Chairman, Digit ry"/>
+          <ResumeSectionRow leftContent="2007-2009" rightContent="Director of Recreational Activities, Digit ry"/>
+          <ResumeSectionRow leftContent="2007-2009" rightContent="Student tutor, Digit ry"/>
         </ResumeSection>
         <ResumeSection header="Intrests">
-          <TextAreaRow textAreaContent="In spare time I enjoy programming. I love to try out new technologies, work with small private applications and complete online courses and tutorials. I also enjoy sports. I used to play basketball, but nowadays I jog and play various team sports. In the winter I love to go snowboarding, either in Finland or abroad." />
-          </ResumeSection>
+          <SingleContentRow textArea content="In spare time I enjoy programming. I love to try out new technologies, work with small private applications and complete online courses and tutorials. I also enjoy sports. I used to play basketball, but nowadays I jog and play various team sports. In the winter I love to go snowboarding, either in Finland or abroad."/>
+        </ResumeSection>
       </div>
     );
   }
@@ -157,6 +147,28 @@ let ResumeHeadingColumn = React.createClass({
   }
 });
 
+let IconCell = React.createClass({
+    render() {
+      return (
+        <div className="italic url-row">
+          <img id={this.props.imageId} height="20" width="20" className="some-icon" alt={this.props.linkName}/>
+          <a href={this.props.linkName} target="_blank">{this.props.linkName}</a>
+        </div>
+      );
+    }
+});
+
+let EmailCell = React.createClass({
+    render() {
+      return (
+        <div className="italic url-row">
+          <span className="glyphicon glyphicon-envelope some-icon" aria-hidden="true"></span>
+          <a href="mailto:simo.pekka.koskinen@gmail.com">simo.pekka.koskinen@gmail.com</a>
+        </div>
+      );
+    }
+});
+
 let ResumeSection = React.createClass({
   render() {
     return (
@@ -170,14 +182,17 @@ let ResumeSection = React.createClass({
   }
 });
 
-let HeadingRow = React.createClass({
+let ResumeSectionRow = React.createClass({
   render() {
+    let rowClasses = this.props.heading ? "row row-header" : "row";
+    let leftCellClasses = this.props.leftCellClasses ? `row-cell left-cell ${this.props.leftCellClasses}` : "row-cell left-cell";
+    let rightCellClasses = this.props.rightCellClasses ? `row-cell right-cell ${this.props.rightCellClasses}` : "row-cell right-cell";
     return (
-      <div className="row row-header">
-        <div className="row-cell left-cell">
+      <div className={rowClasses}>
+        <div className={leftCellClasses}>
           <p>{this.props.leftContent}</p>
         </div>
-        <div className="row-cell right-cell">
+        <div className={rightCellClasses}>
           <p>{this.props.rightContent}</p>
         </div>
       </div>
@@ -185,55 +200,12 @@ let HeadingRow = React.createClass({
   }
 });
 
-let LeftHeadingRightDetailRow = React.createClass({
+let SingleContentRow = React.createClass({
   render() {
+    let content = this.props.textArea ? <pre>{this.props.content}</pre> : this.props.content;
     return (
       <div className="row">
-        <div className="row-cell left-cell row-header">
-          {this.props.leftContent}
-        </div>
-        <div className="row-cell right-cell">
-          {this.props.rightContent}
-        </div>
-      </div>
-    );
-  }
-});
-
-let DetailRow = React.createClass({
-  render() {
-    return (
-      <div className="row detail-row">
-        <div className="row-cell left-cell">{this.props.leftCellContent}</div>
-        <div className={this.props.rowCellClass}>
-          {this.props.rowContent}
-        </div>
-      </div>
-    );
-  }
-});
-
-let DetailRowSingleCell = React.createClass({
-  render() {
-    return (
-      <div className="row detail-row">
-        <div className="row-cell">
-          <p>
-            {this.props.rowContent}
-          </p>
-        </div>
-      </div>
-    );
-  }
-});
-
-let TextAreaRow = React.createClass({
-  render() {
-    return (
-      <div className="row">
-        <pre>
-          {this.props.textAreaContent}
-        </pre>
+          {content}
       </div>
     );
   }

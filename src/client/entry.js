@@ -1,11 +1,7 @@
 import React from "react";
 import App from "./../shared/components/App";
 
-require("./stylesheets/styles.css");
-
-//require("./bootstrap.css");
-//require("~bootstrap.min.css")
-
+require("./stylesheets/styles.less");
 
 const mountNode = document.getElementById('app');
 

@@ -1,8 +1,8 @@
 var path = require("path");
 var webpack = require('webpack');
 
-var bootstrapPath = path.join(__dirname, '/node_modules/bootstrap/dist/css');
-console.log(bootstrapPath);
+//var bootstrapPath = path.join(__dirname, '/node_modules/bootstrap/dist/css');
+var bootstrapPath = path.join(__dirname, '/node_modules/bootstrap/less');
 
 module.exports = {
   devtool: 'inline-source-map',
@@ -22,13 +22,13 @@ module.exports = {
   ],
   resolve: {
     modulesDirectories: ['node_modules', bootstrapPath],
-    extensions: ['', '.js', '.css']
+    extensions: ['', '.js', '.css', '.less']
   },
   module: {
     resolveLoader: { root: path.join(__dirname, "node_modules") },
     loaders: [
       { test: /\.jsx?$/, loaders: ['react-hot', 'babel-loader?experimental'], exclude: /node_modules/ },
-      { test: /\.css$/, loader: "style-loader!css-loader"},
+      { test: /\.less$/, loader: "style!css!less" },
       { test: /\.jpe?g$|\.gif$|\.png$/i, loader: "file-loader" },
       //Loaders for bootsrap-related fonts
       { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&minetype=application/font-woff" },

@@ -22,7 +22,7 @@ module.exports = {
     },
     devtool: 'source-map',
     resolve: {
-      extensions: ['', '.js']
+      extensions: ['', '.js', 'less']
     },
     plugins: [
       new webpack.optimize.DedupePlugin(),
@@ -36,7 +36,7 @@ module.exports = {
     module: {
       loaders: [
         { test: /\.jsx?$/, loaders: ['babel-loader?experimental'], exclude: /node_modules/ },
-        { test: /\.css$/, loader: "style-loader!css-loader" },
+        { test: /\.less$/, loader: "style!css!less" },
         { test: /\.js?$/, loaders: ['babel-loader?experimental'], exclude: /node_modules/, include: path.join(__dirname, 'assets') },
         { test: /\.jpe?g$|\.gif$|\.png$/i, loader: "file-loader" },
         //Loaders for bootsrap-related fonts
