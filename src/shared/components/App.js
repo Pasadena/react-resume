@@ -46,7 +46,7 @@ let ResumeHeader = React.createClass({
           <div className="resume-owner">Simo-Pekka Koskinen</div>
         </ResumeHeadingColumn>
         <ResumeHeadingColumn headingClass="middle-cell-header">
-          <div className="resume-header">7.11.2015</div>
+          <div className="resume-header-date">9.12.2015</div>
           <div style={{height: '20px'}}></div>
           <div>Savikatu 3 A16 20540 Turku</div>
           <div>tel. 0407204728</div>

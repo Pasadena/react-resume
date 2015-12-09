@@ -12,6 +12,25 @@
 @body-right: 70%;
 @body-middle: @body-left;
 
+.responsive(@maxWidth; @rules) {
+    @media only screen and (max-width: @maxWidth) {
+        @rules();
+    }
+}
+
+.responsively-centered {
+  .responsive(450px, {
+    margin: 0 auto;
+  });
+}
+
+.responsive-full-width {
+  .responsive(450px, {
+    width: auto;
+    float: none;
+  });
+}
+
 
 html {
   background-color: @background-color;
@@ -63,14 +82,40 @@ sup {
   min-height: 400px;
   padding: 2%;
   border-radius: 5px;
+  .responsive(450px, {
+        margin: 10% 0%;
+    });
 
   &-header {
     font-size: @resume-header-font !important;
     padding-bottom: 8%;
+    .responsively-centered;
+    .responsive(450px, {
+        padding-bottom: 4%;
+        font-weight: bold;
+    });
+
+    &-date {
+      .responsively-centered;
+    }
   }
 
   &-owner {
     font-size: @resume-sub-header-font !important;
+    .responsively-centered
+  }
+
+  &-heading-section {
+    display: flex;
+    flex-direction: row;
+    .responsive(450px, {
+      justify-content: center;
+      flex-direction: column;
+    });
+  }
+
+  &-heading-column {
+    .responsively-centered
   }
 
   &-section {
@@ -128,7 +173,11 @@ sup {
   clear: both;
   margin-bottom: 0.5%;
   padding-left: 2%;
-  .flex-row
+  .flex-row;
+  .responsive(450px, {
+    margin-left: 0px;
+    margin-right: 0px;
+  });
 }
 
 .row-header {
@@ -149,6 +198,10 @@ sup {
   &-header {
     width: 35%;
     float: left;
+    .responsive(450px, {
+      width: 100%;
+      float: none;
+    });
   }
 }
 
@@ -164,6 +217,8 @@ sup {
 .middle-cell-header {
   width: 35%;
   float: left;
+  .responsively-centered;
+  .responsive-full-width
 }
 
 .url-row {
@@ -171,6 +226,9 @@ sup {
   padding-left: 1%;
   min-height: 20px;
   border-left: 1px solid grey;
+  .responsive(450px, {
+    border: none;
+  });
 
 }
 
