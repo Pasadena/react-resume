@@ -46,7 +46,7 @@ let ResumeHeader = React.createClass({
           <div className="resume-owner">Simo-Pekka Koskinen</div>
         </ResumeHeadingColumn>
         <ResumeHeadingColumn headingClass="middle-cell-header">
-          <div className="resume-header-date">9.12.2015</div>
+          <div className="resume-header-date">18.12.2015</div>
           <div style={{height: '20px'}}></div>
           <div>Savikatu 3 A16 20540 Turku</div>
           <div>tel. 0407204728</div>
@@ -75,7 +75,7 @@ let ResumeBody = React.createClass({
         </ResumeSection>
         <ResumeSection header="Work History">
           <ResumeSectionRow leftContent="2009/09-present" rightContent="Cerion Solutions Oy" heading />
-          <ResumeSectionRow rightContent="As a technical consultant I have designed, implemented and maintained several web-based budgeting and strategy planning applications and customer portals." rightCellClasses="small-font"/>
+          <ResumeSectionRow rightContent="As a technical consultant I have designed, implemented and maintained several Java EE -based budgeting and strategy planning applications for public and private sector. I have also worked with several portal applications and customer portals. Most recently I have worked with Atlassian Connect -based add-on software for Jira Cloud -instances." rightCellClasses="small-font"/>
           <ResumeSectionRow leftContent="2008/05-2008/8" rightContent="Nokia Oyj" heading />
           <ResumeSectionRow rightContent="Assembly line worker" rightCellClasses="small-font"/>
           <ResumeSectionRow leftContent="2007/05-2007/8" rightContent="Nokia Oyj" heading />
@@ -85,7 +85,7 @@ let ResumeBody = React.createClass({
         </ResumeSection>
         <ResumeSection header="Technical skills">
           <ResumeSectionRow leftContent="Programming languages" rightContent="Java, Scala, Javascript, Coffeescript" leftCellClasses="row-header" />
-          <ResumeSectionRow leftContent="Platforms" rightContent="Java EE, Node.js, Force.com" leftCellClasses="row-header" />
+          <ResumeSectionRow leftContent="Platforms" rightContent="Java EE, Node.js, Force.com, EJB" leftCellClasses="row-header" />
           <ResumeSectionRow leftContent="Front-end technologies" rightContent="HTML 5, CSS, LESS, React.js, Angular.js, Backbone.js" leftCellClasses="row-header" />
           <ResumeSectionRow leftContent="Back-end frameworks" rightContent="Play Framework, Tapestry 5, JSF 2" leftCellClasses="row-header" />
           <ResumeSectionRow leftContent="Test tools" rightContent="Cucumber, JUnit" leftCellClasses="row-header" />
