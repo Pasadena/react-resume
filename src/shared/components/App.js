@@ -46,7 +46,7 @@ let ResumeHeader = React.createClass({
           <div className="resume-owner">Simo-Pekka Koskinen</div>
         </ResumeHeadingColumn>
         <ResumeHeadingColumn headingClass="middle-cell-header">
-          <div className="resume-header-date">18.12.2015</div>
+          <div className="resume-header-date">02.02.2016</div>
           <div style={{height: '20px'}}></div>
           <div>Savikatu 3 A16 20540 Turku</div>
           <div>tel. 0407204728</div>
@@ -67,6 +67,9 @@ let ResumeBody = React.createClass({
   render() {
     return (
       <div>
+        <ResumeSection header="Summary">
+          <SingleContentRow textArea content="I'm a fullstack-developer with knowledge on wide variety of tools (ie. Java, Scala, Play Framework, Backbone.js, Coffeescript and React.js) and burning passion for learning new stuff. &#010; I love working with Web-based apps and services and I'm always eager to explore new ways to bend the Web to our needs."/>
+        </ResumeSection>
         <ResumeSection header="Education">
           <ResumeSectionRow leftContent="2006-2015" rightContent="Master of Science in Engineering, University of Turku" heading />
           <ResumeSectionRow rightContent="Major: Software engineering, Minor: business knowledge" rightCellClasses="small-font"/>
@@ -202,7 +205,7 @@ let ResumeSectionRow = React.createClass({
 
 let SingleContentRow = React.createClass({
   render() {
-    let content = this.props.textArea ? <pre>{this.props.content}</pre> : this.props.content;
+    let content = this.props.textArea ? <pre style={{'wordBreak': 'initial'}}>{this.props.content}</pre> : this.props.content;
     return (
       <div className="row">
           {content}
